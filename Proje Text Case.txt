@@ -1,0 +1,43 @@
+1. Proje Kurulumu:
+
+Boş bir React projesi oluşturun.
+Gerekirse CSS çerçevesi veya bileşen kitleri ekleyin.
+2. Firebase Ayarları:
+
+Firebase hesabınızı oluşturun ve proje ekleyin.
+Firebase Authentication özelliğini etkinleştirin.
+Firebase projenize web uygulaması ekleyin ve sağlanan yapılandırma bilgilerini kaydedin.
+3. Firebase ile Auth İşlemleri:
+
+Firebase Authentication'u React projenize entegre edin.
+Kullanıcı kayıt ve giriş işlemleri için bileşenler oluşturun.
+Formik ve Yup kullanarak kayıt ve giriş form validasyonlarını yapın.
+Kayıt ve giriş işlemlerini Firebase Authentication ile bağlayın.
+4. Firebase Firestore Kullanımı:
+
+Firebase Firestore'u projenize entegre edin.
+Kullanıcıların profillerini depolamak için bir "users" koleksiyonu oluşturun.
+Firestore ile kullanıcı profili oluşturma, güncelleme ve çekme işlemleri yapın.
+5. Redux State Yönetimi:
+
+Redux'u projenize entegre edin.
+Auth işlemleri için ayrı bir slice oluşturun.
+Kullanıcının giriş durumunu ve bilgilerini Redux store'da yönetin.
+6. React Router ile Sayfa Yönlendirmeleri:
+
+React Router'ı projenize entegre edin.
+Ana sayfa, giriş sayfası, kayıt sayfası ve kullanıcı profil sayfası gibi bileşenler oluşturun.
+React Router ile sayfa yönlendirmelerini ayarlayın.
+7. Profil Düzenleme Sayfası:
+
+Kullanıcı profilini düzenlemek için bir sayfa oluşturun.
+Firestore'dan çekilen kullanıcı verilerini bu sayfada gösterin.
+Kullanıcının adını, e-postasını veya diğer bilgilerini güncellemesine izin veren bir form oluşturun.
+8. Formik ve Yup ile Validasyonlar:
+
+Profil düzenleme formunun validasyonlarını Formik ve Yup kullanarak yapın.
+Kullanıcıdan geçerli bilgiler girmesini sağlayın.
+9. Firebase JSON Server Entegrasyonu:
+
+Firebase ve Firebase Firestore yerine örnek bir JSON Server kullanarak projenizi geliştirin.
+JSON Server'ı projenize entegre edin ve kayıt, giriş ve profil düzenleme işlemlerini burada simüle edin.
