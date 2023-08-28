@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { SignUpValidation } from '../validations/SignUpValidation';
-import { registerUser } from '../store/actions/Auth';
+import { SignUpValidation } from '../../validations/SignUpValidation';
+import { registerUser, signUpUser } from '../../store/actions/Auth';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 export const SignUpForm = () => {
+  const [isSignUp, setIsSignUp] = useState(true);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (values, dispatch, navigate) => {
+    if (isSignUp) { // Kayıt olma 
+        registerUser(values, dispatch, navigate);
+    }
+    else { // Giriş yapma
+        signUpUser(values, dispatch, navigate);
+    }
+  }
 
   return (
     <div className='bg-white w-125 px-5 py-4 rounded-lg' >
@@ -15,7 +27,7 @@ export const SignUpForm = () => {
                 email: '',
                 password: '',   
             }}
-            onSubmit={(values) => registerUser(values, dispatch)}
+            onSubmit={(values) => handleSubmit(values, dispatch, navigate)}
         >
 
         {({isValid, dirty}) => {
@@ -23,7 +35,7 @@ export const SignUpForm = () => {
                 <div className='w-full flex'>
                     <div className='flex flex-col w-full'>
                         <div className='text-2xl font-semibold mb-5 flex justify-center'>
-                            Hesabını oluştur
+                            {isSignUp ? 'Hesabını oluştur' : 'Giriş Yap'}
                         </div>
                         <Form>
                             <div className='mb-3'>
@@ -56,12 +68,19 @@ export const SignUpForm = () => {
                                 <button
                                     type='submit'
                                     disabled={!isValid || !dirty}
-                                    className={`border bg-gray-dark w-full rounded-3xl py-2 text-white font-semibold my-2 ${(!isValid || !dirty) ? 'opacity-60 cursor-not-allowed' : 'hover:bg-gray-800'}`}
+                                    className={`border bg-gray-700 w-full rounded-3xl py-2 text-white font-semibold my-2 ${(!isValid || !dirty) ? 'opacity-60 cursor-not-allowed' : 'hover:bg-gray-900'}`}
                                 >
-                                    Kayıt ol
+                                    {isSignUp ? 'Kayıt ol' : 'Giriş Yap'}
                                 </button>
                             </div>
                         </Form>
+                        <div className='flex'>
+                            <p 
+                            onClick={() => setIsSignUp(!isSignUp)}
+                            className='cursor-pointer text-sm text-primary-base hover:underline ml-auto'>
+                                {isSignUp ? 'Giriş yapmak için tıklayınız' : 'Kayıt olmak için tıklayınız'}
+                            </p>
+                        </div>
                     </div>
                 </div>
             )
