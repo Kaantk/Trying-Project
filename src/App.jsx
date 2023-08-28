@@ -1,14 +1,14 @@
 import React from 'react';
-import { Routes, Route, Auth, Home, Account, Error } from './NamedExports';  
+import { Routes, Route, Auth, Home, Account, PrivateRoute, Error } from './NamedExports';  
 
 function App() {
   return (
     <>
       <Routes>
-        <Route exact path='/' element={<Auth />} /> 
-        <Route path='/home' element={<Home />} />  
-        <Route path='/account' element={<Account />} />  
-        <Route path='*' element={<Error />} /> 
+        <Route exact path='/' element={<Auth />} />
+        <Route path='/home' element={<PrivateRoute element={<Home />} redirectTo='/' />} />
+        <Route path='/account' element={<PrivateRoute element={<Account />} redirectTo='/' />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </>
   );

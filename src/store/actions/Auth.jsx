@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
-import { auth } from "../../firebase";
+import { auth } from "../../firebase/firebase";
 import { login, logout } from '../slice/Auth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
