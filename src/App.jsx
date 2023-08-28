@@ -1,6 +1,5 @@
-import React from 'react'; 
-import { Routes, Route } from 'react-router-dom';  
-import { Auth, Home, Account, Error } from './pages/index';  
+import React from 'react';
+import { Routes, Route, Auth, Home, Account, Error } from './NamedExports';  
 
 function App() {
   return (

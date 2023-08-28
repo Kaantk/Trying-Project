@@ -275,14 +275,15 @@ const CancelIcon = ({size}) => {
     )
 }
 
-// const XLogo = ({size}) => {
-// 	return (
-// 		<svg viewBox="0 0 24 24" aria-label="X" role="img"
-// 		width={size} height={size} className="r-18jsvk2 r-4qtqp9 r-yyyyoo r-16y2uox r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
-// 	)
-// }
+const AccountCircle = ({size}) => {
+	return (
+		<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24"><g><path fill="none" d="M0 0h24v24H0z"/>
+			<path fill="white" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM6.023 15.416C7.491 17.606 9.695 19 12.16 19c2.464 0 4.669-1.393 6.136-3.584A8.968 8.968 0 0 0 12.16 13a8.968 8.968 0 0 0-6.137 2.416zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></g>
+		</svg>
+	)
+}
 
-const Icon = ({name, size = 24}) => {
+export const Icon = ({name, size = 24}) => {
 
 	const icons = {
 		home: HomeIcon,
@@ -315,6 +316,7 @@ const Icon = ({name, size = 24}) => {
 		arrowLeft: ArrowLeftIcon,
 		logo: LogoIcon,
         cancel: CancelIcon,
+		accountCircle: AccountCircle,
 	}
 
 	const Component = icons[name]
@@ -322,4 +324,3 @@ const Icon = ({name, size = 24}) => {
 
 }
 
-export default Icon;
