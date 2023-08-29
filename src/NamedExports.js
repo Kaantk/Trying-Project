@@ -1,4 +1,4 @@
-export { Auth } from './pages/Auth';
+export { useNavigate } from 'react-router-dom';
 export { Home } from './pages/Home';
 export { Account } from './pages/Account';
 export { Error } from './pages/Error';
@@ -12,3 +12,10 @@ export { logout } from './store/slice/Auth';
 export { handleonAuthStateChanged } from './store/actions/Auth';
 export { toast } from 'react-toastify';
 export { Icon } from '../public/icons/Icon';
+export { Footer } from './components/LoginCenter/Footer';
+export { GoogleLogin } from './components/LoginCenter/MultiAccess/GoogleLogin';
+export { AppleLogin } from './components/LoginCenter/MultiAccess/AppleLogin';
+export { SignUpForm } from './components/LoginCenter/MultiAccess/SignUpForm';
+export { Auth } from './components/LoginCenter/MultiAccess/Auth';
+export { LoginCenter } from './pages/LoginCenter';
+export { SignUpValidation } from './validations/SignUpValidation';

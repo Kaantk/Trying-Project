@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { SignUpValidation } from '../../validations/SignUpValidation';
-import { registerUser, signUpUser } from '../../store/actions/Auth';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { registerUser, signUpUser } from '../../../store/actions/Auth';
+import { Icon, useNavigate, useDispatch, SignUpValidation } from '../../../NamedExports';
 
-export const SignUpForm = () => {
+export const SignUpForm = ({ setIsAuthVisible }) => {
   const [isSignUp, setIsSignUp] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,8 +17,12 @@ export const SignUpForm = () => {
     }
   }
 
+  const handleCancel = () => {
+    setIsAuthVisible(false);
+  }
+
   return (
-    <div className='bg-white w-125 px-5 py-4 rounded-lg' >
+    <div className='bg-white w-125 rounded-lg' >
         <Formik 
             validationSchema={SignUpValidation}
             initialValues={{
@@ -33,7 +35,14 @@ export const SignUpForm = () => {
         {({isValid, dirty}) => {
             return (
                 <div className='w-full flex'>
-                    <div className='flex flex-col w-full'>
+                    <div>
+                        <button
+                        className='hover:bg-gray-light rounded-full ml-4 p-1'
+                        onClick={handleCancel}>
+                            <Icon name='cancel' size={20}/>
+                        </button>
+                    </div>
+                    <div className='flex flex-col w-full pl-4 pr-8'>
                         <div className='text-2xl font-semibold mb-5 flex justify-center'>
                             {isSignUp ? 'Hesabını oluştur' : 'Giriş Yap'}
                         </div>
